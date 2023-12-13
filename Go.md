@@ -60,3 +60,30 @@ Go, also known as Golang, is a programming language developed by Google
 - Generated file that you don't have to manage
 
 - go.sum file maintains the checksum so when you run the project again it will not install all packages again.
+
+## what is exactly these files are ?
+Absolutely, you've provided a succinct overview of the `go.mod` and `go.sum` files in Go, and their role in dependency management. Let's delve a bit deeper into these aspects:
+
+### go.mod File:
+
+1. **Dependency Management:**
+   - The `go.mod` file serves as the module definition for a Go project. It includes metadata about the project, such as the module name, Go version compatibility, and most importantly, the dependencies required by the project.
+
+2. **Similar to requirements.txt in Python:**
+   - Much like `requirements.txt` in Python or `package.json` in Node.js, the `go.mod` file lists the dependencies and their versions that are needed for the project. This ensures reproducibility across different development environments.
+
+3. **go mod tidy:**
+   - The `go mod tidy` command is used to clean up the `go.mod` file. It ensures that the `go.mod` file accurately reflects the dependencies used in the code. Unused dependencies are removed, and missing ones are added.
+
+### go.sum File:
+
+1. **Checksum Management:**
+   - The `go.sum` file is a generated file that contains checksums for specific module versions. It ensures the integrity and security of the dependencies. The checksums are cryptographic hashes generated from the content of the module's source code.
+
+2. **Prevents Redundant Downloads:**
+   - When you build your project or run it again, Go checks the `go.sum` file to verify that the downloaded dependencies match the expected checksums. If they match, Go doesn't need to download the dependencies again, which helps in saving bandwidth and time.
+
+3. **Automatic Maintenance:**
+   - Developers typically don't need to manually manage the `go.sum` file. It's automatically updated by the Go toolchain when you add or update dependencies using commands like `go get` or `go mod tidy`.
+
+In summary, the `go.mod` file is the central file for defining dependencies and metadata for a Go project, while the `go.sum` file ensures the security and integrity of the dependencies by maintaining checksums. Together, they provide an effective and automated way to manage dependencies in Go projects.
