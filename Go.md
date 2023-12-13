@@ -32,3 +32,19 @@ Go, also known as Golang, is a programming language developed by Google
 - Docker
 
 - etcd
+
+## Cross Platform
+
+- WINDOWS
+
+- MACOS
+
+- LINUX (ALL FLAVORS)
+
+## Go Is Not Object Oriented
+
+- There aren't objects like in, for example, C#
+
+- Go doesn't have an Object type (structs in Go aren't objects), Classes, or Inheritance (no classes, so no basing objects on other object)
+
+- The closest thing you'll get to Objects in Go is a type/struct
