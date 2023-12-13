@@ -48,3 +48,15 @@ Go, also known as Golang, is a programming language developed by Google
 - Go doesn't have an Object type (structs in Go aren't objects), Classes, or Inheritance (no classes, so no basing objects on other object)
 
 - The closest thing you'll get to Objects in Go is a type/struct
+
+## Go.mod File
+
+- Dependency management. If you're familiar with Python, think of the requirements.txt file
+
+- Helpful commands; `go mod tidy': Ensures the go.mod file matches the source code in the module 
+
+## Go.sum File
+
+- Generated file that you don't have to manage
+
+- go.sum file maintains the checksum so when you run the project again it will not install all packages again.
