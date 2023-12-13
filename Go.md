@@ -274,3 +274,106 @@ func main() {
 8. **Printing Result (`fmt.Println(result)`):** Finally, we print the result of the function (the sum) using `fmt.Println`.
 
 In summary, a Go function is like a little block of code that you define with a name, input parameters, a specific task (the code inside the function), and, if needed, a result that it gives back. Functions help organize and reuse code in a program.
+
+
+## Variables
+
+In Go (Golang), variables are used to store and manage data. Here's an overview of how variables work in Go, covering full variable declarations, global variables, and short variable declarations:
+
+### Full Variable Declarations:
+
+1. **Syntax:**
+   ```go
+   var variableName dataType
+   ```
+
+2. **Example:**
+   ```go
+   var age int
+   age = 25
+   ```
+
+   In this example, we declare a variable named `age` of type `int` and assign the value `25` to it.
+
+### Global Variables:
+
+1. **Declaration Outside Functions:**
+   ```go
+   var globalVariable int = 10
+   ```
+
+2. **Example:**
+   ```go
+   package main
+
+   import "fmt"
+
+   var globalVariable int = 10
+
+   func main() {
+       fmt.Println(globalVariable)
+   }
+   ```
+
+   The `globalVariable` is declared outside any function and is accessible throughout the package.
+
+### Short Variable Declarations:
+
+1. **Syntax:**
+   ```go
+   variableName := value
+   ```
+
+2. **Example:**
+   ```go
+   func main() {
+       name := "John"
+       age := 30
+       fmt.Println(name, age)
+   }
+   ```
+
+   In this example, variables `name` and `age` are declared and initialized using the short variable declaration syntax.
+
+### Multiple Short Variable Declarations:
+
+1. **Syntax:**
+   ```go
+   variable1, variable2 := value1, value2
+   ```
+
+2. **Example:**
+   ```go
+   func main() {
+       city, population := "New York", 8500000
+       fmt.Println(city, population)
+   }
+   ```
+
+   Here, `city` and `population` are declared and assigned values in a single line.
+
+### Blank Identifier:
+
+1. **Used to Discard Values:**
+   ```go
+   _, result := someFunction()
+   ```
+
+   In this example, we use the underscore (`_`) as a blank identifier to discard a return value from `someFunction()`.
+
+### Constants:
+
+1. **Declaration:**
+   ```go
+   const pi = 3.14159
+   ```
+
+   Constants are declared using the `const` keyword and must be assigned a value at the time of declaration.
+
+### Notes:
+
+- In Go, variables must be used once declared; otherwise, the code won't compile.
+- Variable names must start with a letter and can contain letters, numbers, and underscores.
+- The type of a variable can be explicitly specified, or it can be inferred by the compiler based on the assigned value.
+
+These examples cover the basics of declaring and using variables in Go. It's important to understand the scope of variables, which is determined by where they are declared within the code. Global variables have package-level scope, while variables declared within functions are local to those functions.
