@@ -176,3 +176,101 @@ The link you provided discusses more advanced types in Go. Here are some of them
    ```
 
 These advanced types in Go provide a powerful set of tools for structuring and organizing data in your programs, as well as for handling more complex programming scenarios.
+
+# Go Structure
+
+In Go, the structure of a project is determined by its directory layout and the use of certain files. While Go does not enforce a strict project structure, there are conventions that many developers follow for consistency and organization. Below is a typical directory structure for a Go project:
+
+```
+myproject/
+|-- cmd/
+|   |-- myapp/
+|       |-- main.go
+|
+|-- internal/
+|   |-- pkg1/
+|       |-- pkg1.go
+|   |-- pkg2/
+|       |-- pkg2.go
+|
+|-- pkg/
+|   |-- sharedpkg/
+|       |-- sharedpkg.go
+|
+|-- api/
+|   |-- openapi.yaml
+|
+|-- web/
+|   |-- static/
+|   |-- templates/
+|
+|-- config/
+|   |-- config.yaml
+|
+|-- scripts/
+|   |-- build.sh
+|   |-- deploy.sh
+|
+|-- go.mod
+|-- go.sum
+|-- README.md
+```
+
+Explanation of the directories and files:
+
+- **`cmd/`**: This directory typically contains the main applications or executable entry points for your project. Each subdirectory under `cmd/` represents a different application.
+
+- **`internal/`**: This directory is reserved for packages that are only used by your project and not intended for use by other projects. The contents of `internal/` are not exposed to external dependencies.
+
+- **`pkg/`**: The `pkg/` directory is used for libraries or packages that are intended for use by other projects. It contains shared code that can be imported by external packages.
+
+- **`api/`**: This directory may contain API specifications, such as OpenAPI or Swagger files, describing your project's API.
+
+- **`web/`**: This directory is often used for web-related assets, such as static files and templates.
+
+- **`config/`**: Configuration files for your project, such as YAML or JSON files, can be placed in this directory.
+
+- **`scripts/`**: Shell scripts or other automation scripts used for building, testing, or deploying your project.
+
+- **`go.mod`**: The `go.mod` file is used to define and manage the project's dependencies and modules.
+
+- **`go.sum`**: The `go.sum` file, as mentioned earlier, maintains cryptographic checksums for the dependencies specified in `go.mod`.
+
+- **`README.md`**: A README file providing documentation and information about the project.
+
+This structure is just an example, and the actual layout may vary based on the project's nature and requirements. Additionally, some projects may not have all these directories or may have additional directories based on specific needs. It's essential to follow the conventions that make sense for your project and team while considering factors like maintainability, readability, and scalability.
+
+
+## Function Structure
+
+Certainly! Let's break down the structure of a function in Go in a simple way:
+
+```go
+func addNumbers(a int, b int) int {
+    sum := a + b
+    return sum
+}
+
+func main() {
+    result := addNumbers(3, 5)
+    fmt.Println(result)
+}
+```
+
+1. **Function Declaration (`func`):** The `func` keyword is used to declare a function.
+
+2. **Function Name (`addNumbers`):** This is the name of the function. In this case, it's `addNumbers`.
+
+3. **Parameters (`a int, b int`):** Inside the parentheses, you declare the parameters that the function takes. Each parameter has a name (`a` and `b` in this example) and a type (`int` for integer in this case).
+
+4. **Return Type (`int`):** After the parameter list, you specify the type of value that the function will return. In this case, the function returns an integer (`int`).
+
+5. **Function Body (`{ ... }`):** The body of the function contains the code that gets executed when the function is called. In this example, it calculates the sum of the two input numbers (`a` and `b`).
+
+6. **Return Statement (`return sum`):** The `return` keyword is used to send a value back from the function. Here, it returns the calculated sum.
+
+7. **Function Call (`addNumbers(3, 5)`):** In the `main` function, we call `addNumbers` with arguments `3` and `5`. This means `a` becomes `3` and `b` becomes `5` inside the `addNumbers` function.
+
+8. **Printing Result (`fmt.Println(result)`):** Finally, we print the result of the function (the sum) using `fmt.Println`.
+
+In summary, a Go function is like a little block of code that you define with a name, input parameters, a specific task (the code inside the function), and, if needed, a result that it gives back. Functions help organize and reuse code in a program.
