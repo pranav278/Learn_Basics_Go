@@ -532,3 +532,27 @@ func main() {
 ```
 
 In this example, `ptr` is a pointer variable that stores the memory address of `num`. The `*ptr` expression gives the value stored at that memory address. The output will show the value of `num`, its memory address, the dereferenced value, and the memory address stored in `ptr`.
+
+
+## Libraries
+
+- Standard libraries == Built-in
+
+- 3rd party libraries == You have to find them and install them
+
+
+1. **Standard Libraries (Built-in):**
+   - Standard libraries in a programming language are collections of pre-written functions and modules that come bundled with the language's distribution.
+   - These libraries provide essential functionality and are considered part of the core language features.
+   - Standard libraries are typically well-documented and guaranteed to be available on any system where the programming language is supported.
+
+   In Go, for example, the standard library includes packages for working with strings, files, networking, cryptography, and more. Developers can use these packages without additional installation because they are built into the language.
+
+2. **Third-Party Libraries:**
+   - Third-party libraries, also known as external or external dependencies, are libraries developed by individuals or organizations outside the official language maintainers.
+   - These libraries are not part of the standard distribution of the language, and users need to find, install, and manage them separately.
+   - Third-party libraries can be discovered and retrieved using package management tools specific to the language. In Go, the `go get` command is commonly used to download and install external packages.
+
+   Examples of third-party libraries in Go include libraries for handling HTTP requests, working with databases, implementing logging, and more. These libraries extend the functionality of the language beyond what is provided by the standard library.
+
+In summary, standard libraries come bundled with the programming language and provide core functionality, while third-party libraries are external packages that developers can choose to include in their projects to leverage additional features and tools. The use of third-party libraries allows developers to benefit from the broader ecosystem of software and tools created by the community.
