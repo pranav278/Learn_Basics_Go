@@ -377,3 +377,108 @@ In Go (Golang), variables are used to store and manage data. Here's an overview 
 - The type of a variable can be explicitly specified, or it can be inferred by the compiler based on the assigned value.
 
 These examples cover the basics of declaring and using variables in Go. It's important to understand the scope of variables, which is determined by where they are declared within the code. Global variables have package-level scope, while variables declared within functions are local to those functions.
+
+## Constants
+In Go, constants are values whose values cannot be changed once they are assigned during the compilation process. Constants in Go are declared using the `const` keyword. Here's an overview of how constants work in Go:
+
+### Declaration:
+
+```go
+const pi = 3.14159
+```
+
+In this example, a constant named `pi` is declared with the value `3.14159`. Constants must be assigned a value at the time of declaration, and their values cannot be modified later in the program.
+
+### Typed Constants:
+
+You can explicitly specify the type of a constant:
+
+```go
+const myConst int = 42
+```
+
+### Enumeration with Constants:
+
+Constants can be used for enumeration-like constructs:
+
+```go
+const (
+    Monday    = 1
+    Tuesday   = 2
+    Wednesday = 3
+    // ...
+)
+```
+
+In this example, each day is assigned a unique constant value.
+
+### Enumeration with `iota`:
+
+The `iota` identifier is used to create a sequence of related constants:
+
+```go
+const (
+    Sunday = iota
+    Monday
+    Tuesday
+    Wednesday
+    Thursday
+    Friday
+    Saturday
+)
+```
+
+Here, `iota` starts at 0 and increments by 1 for each subsequent line.
+
+### Untyped Constants:
+
+Constants in Go can be untyped, and their types are determined by the context in which they are used:
+
+```go
+const x = 42
+const y float64 = x
+```
+
+In this example, `y` is implicitly typed as `float64` because it's assigned the value of `x`, which is an untyped constant.
+
+### Use Cases:
+
+1. **Mathematical Constants:**
+   ```go
+   const pi = 3.14159
+   const e = 2.71828
+   ```
+
+2. **Flag Values:**
+   ```go
+   const (
+       FlagRead  = 1 << iota // 1
+       FlagWrite              // 2
+       FlagExecute            // 4
+   )
+   ```
+
+   This is an example of using bitwise operators with constants.
+
+3. **Days of the Week:**
+   ```go
+   const (
+       Sunday = iota
+       Monday
+       Tuesday
+       Wednesday
+       Thursday
+       Friday
+       Saturday
+   )
+   ```
+
+   Here, `iota` is used for a sequence of related constants.
+
+### Note:
+
+- Constants in Go are a compile-time concept, and they are evaluated and replaced with their values during the compilation process.
+- Typed constants provide additional type safety.
+- The `iota` identifier simplifies the creation of sequences of related constants.
+
+Constants are useful for defining values that should not change during the execution of a program and for creating symbolic names for constant values.
